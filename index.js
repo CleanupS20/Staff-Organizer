@@ -18,8 +18,8 @@ const createManager = () => {
             },
             {
                 type: 'input',
-                message: 'Enter Manger employee id',
-                name: 'managerId',
+                message: 'Enter Manger employee ID',
+                name: 'managerID',
 
             },
             {
@@ -35,8 +35,8 @@ const createManager = () => {
 
         ])
         .then((newManager) => {
-            const { managerName, managerId, managerEmail, managerOffice } = newManager
-            const manager = new Manager(managerName, managerId, managerEmail, managerOffice)
+            const { managerName, managerID, managerEmail, managerOffice } = newManager
+            const manager = new Manager(managerName, managerID, managerEmail, managerOffice)
             teamArray.push(manager)
             createTeam()
         })
@@ -87,8 +87,8 @@ function addEngineer() {
         },
         {
             type: 'input',
-            message: 'Enter employee id',
-            name: 'engineerId',
+            message: 'Enter employee ID',
+            name: 'engineerID',
         },
         {
             type: 'input',
@@ -102,8 +102,8 @@ function addEngineer() {
         },
     ])
         .then((newEngineeer) => {
-            const { engineerName, engineerId, engineerEmail, engineerGithub } = newEngineeer
-            let engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub)
+            const { engineerName, engineerID, engineerEmail, engineerGithub } = newEngineeer
+            let engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGithub)
             teamArray.push(engineer)
             createTeam()
         })
@@ -118,8 +118,8 @@ function addIntern() {
         },
         {
             type: 'input',
-            message: 'Enter employee id',
-            name: 'internId',
+            message: 'Enter employee ID',
+            name: 'internID',
         },
         {
             type: 'input',
@@ -172,10 +172,10 @@ teamArray.forEach((element) => {
         <div>
             <div class="card-top bg-info" style="color: white; border-bottom: 3px solid black;" >
             <h2 class="card-title">${element.name} </h2>
-            <h3 class="card-title pb-3" style="color: antiquewhite;">${element.role}</h3>
+            <h3 class="card-title pb-3" style="color: white;">${element.role}</h3>
         </div>
         <div class="card-bottom mx-3">
-            <p>Employee Id: ${element.id}</p>
+            <p>Employee ID: ${element.ID}</p>
             <a href="mailto:${element.email}" class="card-link">E-mail</a>`
             
             
@@ -203,7 +203,7 @@ const htmlFoot = `
 `
 siteArray.push(htmlFoot)
 
-fs.writeFile(`./dist/new_site.html`, siteArray.join(""), (err) => {
+fs.writeFile(`./dist/created_site.html`, siteArray.join(""), (err) => {
     console.log(err)
 })
 
