@@ -1,20 +1,29 @@
-const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern')
 
-class Intern extends Employee{
-  constructor(name, ID, email, role, school) {
-    super(name, ID, email, role)
-    this.school = school;
-  };
+describe("Intern", () => {
+    describe("getAttributes", () => {
+      it("Should create an Intern object and return the employee attributes passed through the input parameters", () => {
 
-  getSchool() {
-    return this.school
-  };
+        const testName = "John";
+        const testID = "1234"
+        const testEmail = 'Johntest@gmail.com'
+        const testSchool = 'University'
+        const testRole = 'Intern'
 
+        const testIntern = new Intern(testName, testID, testEmail, testRole, testSchool);
 
-  getRole() {
-    return 'Intern'
-  };
+        nameResult = testIntern.getName();
+        idResult = testIntern.getId();
+        emailResult = testIntern.getEmail()
+        roleResult = testIntern.getRole()
+        schoolResult = testIntern.getSchool()
+        
+        expect(nameResult).toEqual(testName);
+        expect(idResult).toEqual(testID);
+        expect(emailResult).toEqual(testEmail);
+        expect(roleResult).toEqual('Intern');
+        expect(schoolResult).toEqual(testSchool);
 
-};
-
-module.exports = Intern;
+      });
+    });
+  });
