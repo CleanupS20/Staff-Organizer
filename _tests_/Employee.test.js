@@ -1,29 +1,24 @@
-const inquirer = require('inquirer');
+const Employee = require('../lib/Employee')
 
-class Employee {
-  constructor(name, ID, email, role) {
-    this.name = name;
-    this.ID = ID;
-    this.email = email;
-    this.role = role;
-  };
-  
-  getName() {
-    return this.name;
-  };
+describe("Employee", () => {
+    describe("getAttributes", () => {
+      it("Should create an Employee object and return the employee attributes passed through the input parameters", () => {
+        
+        const testName = "John";
+        const testID = "1234"
+        const testEmail = 'Johntest@gmail.com'
 
-  getId() {
-    return this.ID;
-  };
+        const testEmployee = new Employee(testName, testID, testEmail);
 
-  getEmail() {
-    return this.email;
-  };
-    
-  getRole() {
-      return 'Employee'
-  };
-
-};
-  
-module.exports = Employee;
+        nameResult = testEmployee.getName();
+        idResult = testEmployee.getId();
+        emailResult = testEmployee.getEmail()
+        roleResult = testEmployee.getRole()
+        
+        expect(nameResult).toEqual(testName);
+        expect(idResult).toEqual(testID);
+        expect(emailResult).toEqual(testEmail);
+        expect(roleResult).toEqual('Employee');
+      });
+    });
+  });
