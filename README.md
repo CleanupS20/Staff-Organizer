@@ -23,6 +23,8 @@
 
   [Video Demo] https://drive.google.com/file/d/1mI7uYVMo7IRBksqQvuusz2HM-yxQd1V7/view?usp=share_link
 
+  [Video Demo] https://drive.google.com/file/d/1ND_FYMz198DLAQPchoaG6LBx2dpeV7L1/view?usp=share_link
+
   ## Installation
 
     Clone this repository, navigate into it using the console.
