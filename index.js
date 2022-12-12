@@ -157,19 +157,20 @@ const htmlHead = `
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>My Team</title>
+    <title>Staff Organizer</title>
+
 </head>
-<body style="background-color: rgb(195, 195, 195);">
-<h1 class="col-12 bg-danger" style="height:100px; color: antiquewhite; border-bottom: 4px black; border-style: outset; "><span class="d-flex justify-content-center mt-3">My Team </span></h1>
-    <section class="col-12 d-flex justify-content-center flex-wrap">
+<body style="background-color: white;">
+<h1 class="col-12 bg-primary" style="height:100px; color: white; border-bottom: 4px black; border-style: outset; "><span class="d-flex justify-content-center mt-3 m-4">My Team </span></h1>
+    <section class="col-12 d-flex justify-content-center flex-wrap text-center">
 `
 siteArray.push(htmlHead)
 
 teamArray.forEach((element) => {
     let card = `
-    <div class="card" style="width: 18rem; border: 2px outset black;">
+    <div class="card m-4" style="width: 18rem; border: 2px outset black;">
         <div>
-            <div class="card-top bg-primary" style="color: antiquewhite; border-bottom: 3px solid black;" >
+            <div class="card-top bg-info" style="color: white; border-bottom: 3px solid black;" >
             <h2 class="card-title">${element.name} </h2>
             <h3 class="card-title pb-3" style="color: antiquewhite;">${element.role}</h3>
         </div>
